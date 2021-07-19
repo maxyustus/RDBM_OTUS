@@ -11,3 +11,5 @@
 ### Краткое описание
 
 Ниже представлена сама база данных и краткое описание схемы:
+
+![Скриншот базы данных](https://github.com/maxyustus/RDBM_OTUS/blob/main/2.%20%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D0%BF.%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%BE%D0%B2%20%D0%B8%20%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B8%CC%86/Screenshot%202021-07-19%20at%2015.41.13.png)
