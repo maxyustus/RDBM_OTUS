@@ -17,12 +17,12 @@
 
 Индекс по полю first_name таблицы actor с функцией initcap. Планировщик не хочет подключать индекс при поиске. Установив seq scan в off увидели, что общая стоимость по index scan выше, а значит использовать этот индекс возможно не стоит. 
 
-### 3. Индекс на часть таблицы
+### 4. Индекс на часть таблицы
 [step 4](https://github.com/maxyustus/RDBM_OTUS/blob/main/6.%20%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20PostgreSQL/partialindex.sql)
 
 Индекс по полю rental_duration таблицы film, где rental_duration = 7 т.е. равна неделе. Разница почти незначительная, хотя планировщик использует индекс при поиске. В таблице всего 1000 строк.
 
-### 4. Составной индекс
+### 5. Составной индекс
 
 [step 5](https://github.com/maxyustus/RDBM_OTUS/blob/main/6.%20%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20PostgreSQL/compositeindex.sql)
 
