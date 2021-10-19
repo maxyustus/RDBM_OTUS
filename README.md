@@ -10,3 +10,6 @@
 6. [Индексы PostgreSQL](https://github.com/maxyustus/RDBM_OTUS/blob/main/6.%20%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20PostgreSQL/index.md)
 7. [DML: агрегация и сортировка, CTE, аналитические функции](https://github.com/maxyustus/RDBM_OTUS/blob/main/7.%20DML%20-%20%D0%B0%D0%B3%D1%80%D0%B5%D0%B3%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0%2C%20CTE%2C%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8/markdown.md)
 8. [Репликация в PostgreSQL](https://github.com/maxyustus/RDBM_OTUS/blob/main/7.%20%D0%A0%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B2%20postgreSQL/markdown.md)
+9. [Запуск MySQL, Docker](https://github.com/maxyustus/RDBM_OTUS/blob/main/8.%20%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA%20MySQL%2C%20Docker/markdown.md)
+10. [Типы данных в MySQL, JSON, перенос БД](https://github.com/maxyustus/RDBM_OTUS/blob/main/9.%20%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20MySQL%2C%20JSON%2C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%20%D0%91%D0%94/markdown.md)
+11. [DDL, Partitioning](https://github.com/maxyustus/RDBM_OTUS/blob/main/10.%20DDL%2C%20Partitioning/markdown.md)
