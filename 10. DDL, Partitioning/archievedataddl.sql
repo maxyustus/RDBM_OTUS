@@ -1,0 +1,55 @@
+USE vinyldb;
+
+CREATE TABLE IF NOT EXISTS RecordLabel(
+	LabelId INT PRIMARY KEY,
+	LabelName INT(50) NOT NULL,
+	Website VARCHAR(50) NOT NULL,
+	LabelArtwork VARCHAR(255) NOT NULL,
+	Email VARCHAR(50) NOT NULL,
+    ModifiedDate TIMESTAMP 
+);
+
+CREATE TABLE IF NOT EXISTS Country(
+	CountryId INT PRIMARY KEY,
+	CountryName VARCHAR(50) NOT NULL,
+    ModifiedDate TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS Author(
+	AuthorId INT PRIMARY KEY,
+	AuthorName VARCHAR(50) NOT NULL,
+	Biography VARCHAR(255) NOT NULL,
+	Website VARCHAR(50) NOT NULL,
+	Photo VARCHAR(255) NOT NULL,
+    ModifiedDate TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS AuthorAlias(
+	AuthorAliasId INT PRIMARY KEY,
+	AuthorId INT NOT NULL,
+	AuthorAlias VARCHAR(50) NOT NULL,
+    ModifiedDate TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS ReleaseBase(
+	ReleaseId INT PRIMARY KEY,
+	SerialId SERIAL NOT NULL,
+	ReleaseName VARCHAR(50) NOT NULL,
+	LabelId INT NOT NULL,
+	AuthorId INT NOT NULL,
+	GenreId INT NOT NULL,
+	CountryId INT NOT NULL,
+	Tracklist VARCHAR(255) NOT NULL,
+	ReleaseData DATE NOT NULL,
+	TotalCopies INT NOT NULL CHECK (TotalCopies >= 0),
+	AvailableCopies INT NOT NULL CHECK (AvailableCopies >= 0),
+	AverageRating NUMERIC(2,1) NOT NULL,
+	ReleaseArtwork VARCHAR(255) NOT NULL,
+    ModifiedDate TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS genre(
+	GenreId INT PRIMARY KEY,
+	GenreName VARCHAR(50) NOT NULL,
+    ModifiedDate TIMESTAMP
+);
