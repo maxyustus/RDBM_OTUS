@@ -32,7 +32,7 @@ FROM ReleaseBase
 WHERE JSON_EXTRACT(Attributes, '$.style') LIKE '%leftfield%'
 	  AND JSON_EXTRACT(Attributes, '$.style') LIKE '%house%';
 	 
--- Найдём все релизы и имя поставщика закупленные у поставщиков количеством n и более.
+-- Найдём все релизы и имя поставщика, закупленные у поставщиков количеством n и более.
 SELECT 
 	rb.ReleaseName,
 	sr.TotalCopies,
@@ -44,7 +44,7 @@ FROM SuppliedRelease sr
 				ON sr.SupplierId = s.SupplierId 
 WHERE (sr.TotalCopies >= 100);
 
--- Найдём релизы в которых больше n треков*
+-- Найдём релизы в которых больше n треков.
 SELECT 
 	ReleaseId,
 	ReleaseName,
