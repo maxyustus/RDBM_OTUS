@@ -14,3 +14,4 @@
 10. [Типы данных в MySQL, JSON, перенос БД](https://github.com/maxyustus/RDBM_OTUS/blob/main/9.%20%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20MySQL%2C%20JSON%2C%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81%20%D0%91%D0%94/markdown.md)
 11. [DDL, Partitioning](https://github.com/maxyustus/RDBM_OTUS/blob/main/10.%20DDL%2C%20Partitioning/markdown.md)
 12. [DML в MySQL](https://github.com/maxyustus/RDBM_OTUS/blob/main/12.%20DML%2C%20MySQL/markdown.md)
+13. [DML, агрегация и сортировка](https://github.com/maxyustus/RDBM_OTUS/blob/main/13.%20DML%2C%20%D0%B0%D0%B3%D1%80%D0%B5%D0%B3%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0/markdown.md)
