@@ -49,7 +49,7 @@ WHERE tp1.RetailPrice IN (
 SELECT MAX(tp2.RetailPrice) 
 FROM TotalProducts tp2 
 WHERE tp2.LabelId = tp1.LabelId) 
-group by LabelId;
+GROUP BY LabelId;
 
 -- Rollup с количеством пластинок (аналогично выполняем по колличеству товаров по категориям).
 SET sql_mode = '';
