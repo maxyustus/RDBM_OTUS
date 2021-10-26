@@ -30,14 +30,14 @@ SHOW INDEX FROM SuppliedRelease;
 DROP INDEX ReleaseIdIdx ON SuppliedRelease;
 
 -- EXPLAIN ANALYZE
- -> Table scan on <temporary>  (actual time=0.001..0.001 rows=3 loops=1) -- Планировщик предпочёл aggregate using temporary table. Потом он сканирует <temporary>.
-    -> Aggregate using temporary table  (actual time=0.396..0.397 rows=3 loops=1)
-        -> Nested loop inner join  (cost=10.90 rows=18) (actual time=0.168..0.303 rows=18 loops=1)
-            -> Nested loop inner join  (cost=4.60 rows=18) (actual time=0.159..0.220 rows=18 loops=1)
-                -> Table scan on rb  (cost=1.30 rows=3) (actual time=0.120..0.123 rows=3 loops=1) -- Table Scan, индекса нет.
-                -> Filter: (sr.SupplierId is not null)  (cost=0.70 rows=6) (actual time=0.025..0.031 rows=6 loops=3)
-                    -> Index lookup on sr using ReleaseIdIdx (ReleaseId=rb.ReleaseId)  (cost=0.70 rows=6) (actual time=0.025..0.030 rows=6 loops=3)
-            -> Single-row covering index lookup on s using PRIMARY (SupplierId=sr.SupplierId)  (cost=0.26 rows=1) (actual time=0.004..0.004 rows=1 loops=18)
+-> Table scan on <temporary>  (actual time=0.001..0.001 rows=3 loops=1) -- Планировщик предпочёл aggregate using temporary table. Потом он сканирует <temporary>.
+  -> Aggregate using temporary table  (actual time=0.396..0.397 rows=3 loops=1)
+     -> Nested loop inner join  (cost=10.90 rows=18) (actual time=0.168..0.303 rows=18 loops=1)
+         -> Nested loop inner join  (cost=4.60 rows=18) (actual time=0.159..0.220 rows=18 loops=1)
+             -> Table scan on rb  (cost=1.30 rows=3) (actual time=0.120..0.123 rows=3 loops=1) -- Table Scan, индекса нет.
+             -> Filter: (sr.SupplierId is not null)  (cost=0.70 rows=6) (actual time=0.025..0.031 rows=6 loops=3)
+                 -> Index lookup on sr using ReleaseIdIdx (ReleaseId=rb.ReleaseId)  (cost=0.70 rows=6) (actual time=0.025..0.030 rows=6 loops=3)
+           -> Single-row covering index lookup on s using PRIMARY (SupplierId=sr.SupplierId)  (cost=0.26 rows=1) (actual time=0.004..0.004 rows=1 loops=18)
 
 -- DESC FORMAT=TREE
  -> Table scan on <temporary>
@@ -51,9 +51,9 @@ DROP INDEX ReleaseIdIdx ON SuppliedRelease;
             -> Single-row covering index lookup on s using PRIMARY (SupplierId=sr.SupplierId)  (cost=0.10 rows=1)
             
 -- EXPLAIN           
-1	SIMPLE	rb		ALL		PRIMARY			[NULL]	[NULL]	[NULL]					3	100.0	Using temporary   -- type:ALL, индекса нет, Сканируем всю таблицу.
-1	SIMPLE	sr		ALL		SupplierIdIdx	[NULL]	[NULL]	[NULL]					18	10.0	Using where; Using join buffer (hash join) -- type:ALL, индекса нет, Сканируем всю таблицу.
-1	SIMPLE	s		eq_ref	PRIMARY			PRIMARY	4		vinyldb.sr.SupplierId	1	100.0	Using index
+SIMPLE	rb	ALL		PRIMARY		[NULL]	[NULL]	[NULL]		3	100.0	Using temporary   -- type:ALL, индекса нет, Сканируем всю таблицу.
+SIMPLE	sr	ALL		SupplierIdIdx	[NULL]	[NULL]	[NULL]		18	10.0	Using where; Using join buffer (hash join) -- type:ALL, индекса нет, Сканируем всю таблицу.
+SIMPLE	s	eq_ref	PRIMARY	PRIMARY		4	vinyldb.sr.SupplierId	1	100.0	Using index
 
 -- Вернём обратно наши индексы.
 CREATE INDEX ReleaseNameIdx ON ReleaseBase(ReleaseName);
@@ -79,9 +79,9 @@ CREATE INDEX ReleaseIdIdx ON SuppliedRelease(ReleaseId);
 
 
  -- EXPLAIN
-1	SIMPLE	rb		index	PRIMARY,ReleaseNameIdx		ReleaseNameIdx	202	[NULL]					3	100.0	Using index -- type:index, Используется индекс ReleaseNameIdx.
-1	SIMPLE	sr		ref		SupplierIdIdx,ReleaseIdIdx	ReleaseIdIdx	4	vinyldb.rb.ReleaseId	6	100.0	Using where -- type:ref, Используется индекс ReleaseIdIdx из SuppliedRelease.
-1	SIMPLE	s		eq_ref	PRIMARY						PRIMARY			4	vinyldb.sr.SupplierId	1	100.0	Using index  
+SIMPLE	rb	index	PRIMARY,ReleaseNameIdx		ReleaseNameIdx	202	[NULL]			3	100.0	Using index -- type:index, Используется индекс ReleaseNameIdx.
+SIMPLE	sr	ref	SupplierIdIdx,ReleaseIdIdx	ReleaseIdIdx	4	vinyldb.rb.ReleaseId	6	100.0	Using where -- type:ref, Используется индекс ReleaseIdIdx из SuppliedRelease.
+SIMPLE	s	eq_ref	PRIMARY				PRIMARY		4	vinyldb.sr.SupplierId	1	100.0	Using index  
 -- Итого: с большой долей вероятности у нас получилось оптимизировать запрос, используя индексы. 
 -- Однозначно сказать сейчас нельзя, потому что в таблице физически не хватает данных, чтобы посмотреть насколько индексы ускоряют выборку.
 -- Однако, оптимизатор их использует, мы видим это при построении плана запроса.
