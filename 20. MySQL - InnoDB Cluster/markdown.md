@@ -10,7 +10,7 @@
 ![3 gcloud vms configure](https://github.com/maxyustus/RDBM_OTUS/blob/main/20.%20MySQL%20-%20InnoDB%20Cluster/1.%203%20vms%20and%20mysql%20shell.png)
 
 * Попробуем собрать по документации. Cконфигурируем инстанс, заодно включатся GTID и т.д. Подключим ноды. Что получили:
-* 
+
 ![configure instances](https://github.com/maxyustus/RDBM_OTUS/blob/main/20.%20MySQL%20-%20InnoDB%20Cluster/2.%20configure%20instances.png)
 
 * Рабочий вариант: прописываем ipAllowList и добавляем ноды. Снова проверим статус. *cluster.status()*
@@ -21,7 +21,7 @@
 * Попробуем переключить в мультимастер. 
 *cluster.switchToMultiPrimaryMode()*
 
-*[multimaster switch](https://github.com/maxyustus/RDBM_OTUS/blob/main/20.%20MySQL%20-%20InnoDB%20Cluster/4.%20multimaster%20switch.png)
+![multimaster switch](https://github.com/maxyustus/RDBM_OTUS/blob/main/20.%20MySQL%20-%20InnoDB%20Cluster/4.%20multimaster%20switch.png)
 
 *  Выдадим себе гранты выдадим из под MYSQL. 
 
