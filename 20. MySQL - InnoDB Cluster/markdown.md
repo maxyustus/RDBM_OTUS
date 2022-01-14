@@ -23,7 +23,7 @@
 
 ![multimaster switch](https://github.com/maxyustus/RDBM_OTUS/blob/main/20.%20MySQL%20-%20InnoDB%20Cluster/4.%20multimaster%20switch.png)
 
-*  Выдадим себе гранты выдадим из под MYSQL. 
+*  Выдадим себе гранты из под MYSQL. 
 
 ![grants](https://github.com/maxyustus/RDBM_OTUS/blob/main/20.%20MySQL%20-%20InnoDB%20Cluster/5.%20grant%20all.png)
 
