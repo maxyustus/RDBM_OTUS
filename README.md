@@ -26,4 +26,4 @@
 22. [Кластерные возможности MongoDB](https://github.com/maxyustus/RDBM_OTUS/blob/main/22.%20%D0%9A%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20mongodb/markdown.md)
 23. [Базовые возможности MongoDB](https://github.com/maxyustus/RDBM_OTUS/blob/main/22.%20%D0%9A%D0%BB%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20mongodb/basic_mongodb.md)
 24. [Apache Cassandra with JPA](https://github.com/maxyustus/RDBM_OTUS/blob/main/23.%20Apache%20Cassandra%20with%20JPA/markdown.md)
-
+25. [Sound Store database](https://github.com/maxyustus/RDBM_OTUS/blob/main/24.%20Sound%20Store%20Project/markdown.md)
