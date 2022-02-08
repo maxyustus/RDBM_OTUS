@@ -9,7 +9,7 @@
 3. Стартуем docker контейнеры.
 4. Посмотрим логи `docker logs cassandra-jpa-example_java_1 -f`.
 5. Результаты на скриншоте: число репетиций (5), в  каждой репетиции число операций (10000). Значения по столбцам по каждому типу операции(WRITE, READ, UPDATE, DELETE) в msec - total, max, min, avg.
-![docker logs]()
+![docker logs](https://github.com/maxyustus/RDBM_OTUS/blob/main/23.%20Apache%20Cassandra%20with%20JPA/appache_cassandra_JPA_test.png)
 
 
 **Выводы**
